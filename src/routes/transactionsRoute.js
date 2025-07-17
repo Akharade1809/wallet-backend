@@ -4,7 +4,7 @@ import {
   deleteTransaction,
   getSummaryByUserId,
   getTransactionsByUserId,
-} from "../config/controllers/transactionController.js";
+} from "../controllers/transactionController.js";
 
 const router = express.Router();
 
