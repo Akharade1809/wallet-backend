@@ -1,12 +1,8 @@
 import {neon} from "@neondatabase/serverless"
-import dotenv from "dotenv";
-
-dotenv.config();
-
+import "dotenv/config";
 console.log(process.env.DATABASE_URL);
 
-export const sql = neon('postgresql://neondb_owner:npg_6vQSKyNO1xdE@ep-hidden-cloud-a1fghqtc-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require');
-
+export const sql = neon(process.env.DATABASE_URL)
 export async function initDB() {
     try {
         await sql`CREATE TABLE IF NOT EXISTS transactions(
